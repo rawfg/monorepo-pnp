@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "3.20.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn workspaces foreach --verbose run install",
+    "start": "yarn workspaces foreach --verbose run start",
+    "tsc": "yarn workspaces foreach run tsc",
+    "watch": "yarn workspaces foreach --verbose run watch",
+    "cleanup": "rm -rf node_modules && yarn workspaces foreach --verbose run cleanup"
+  }
+}
